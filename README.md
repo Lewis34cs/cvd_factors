@@ -1206,17 +1206,17 @@ print(cls_report(y_test, y_pred))
 evaluate_classification(dummy, X_test, y_test, X_train, y_train, label='Dummy')
 ```
 
-    Accuracy: 0.4973067404280099
+    Accuracy: 0.5003639539962149
     
     
                   precision    recall  f1-score   support
     
-               0       0.51      0.51      0.51      6973
-               1       0.49      0.49      0.49      6765
+               0       0.50      0.49      0.49      6973
+               1       0.49      0.50      0.50      6765
     
-        accuracy                           0.50     13738
-       macro avg       0.50      0.50      0.50     13738
-    weighted avg       0.50      0.50      0.50     13738
+        accuracy                           0.49     13738
+       macro avg       0.50      0.50      0.49     13738
+    weighted avg       0.50      0.49      0.49     13738
     
     ------------------------------------------------------------
     ------------------------------------------------------------
@@ -1224,17 +1224,17 @@ evaluate_classification(dummy, X_test, y_test, X_train, y_train, label='Dummy')
     ------------------------------------------------------------
                   precision    recall  f1-score   support
     
-               0       0.51      0.50      0.51      6973
-               1       0.49      0.50      0.50      6765
+               0       0.52      0.51      0.51      6973
+               1       0.50      0.51      0.51      6765
     
-        accuracy                           0.50     13738
-       macro avg       0.50      0.50      0.50     13738
-    weighted avg       0.50      0.50      0.50     13738
+        accuracy                           0.51     13738
+       macro avg       0.51      0.51      0.51     13738
+    weighted avg       0.51      0.51      0.51     13738
     
     ------------------------------------------------------------
     ------------------------------------------------------------
-    Training data score: 0.5008371551284851
-    Test data score: 0.4943951084582909
+    Training data score: 0.503385018563005
+    Test data score: 0.5012374435871306
     ------------------------------------------------------------
     
     
@@ -1395,201 +1395,10 @@ for name, model in models_2:
 
 
 ```python
-with sklearn.config_context(display='diagram'):
-    for pipe in multi_pipes:
-        display(multi_pipes[pipe])
+# with sklearn.config_context(display='diagram'):
+#     for pipe in multi_pipes:
+#         display(multi_pipes[pipe])
 ```
-
-
-<style>div.sk-top-container {color: black;background-color: white;}div.sk-toggleable {background-color: white;}label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.2em 0.3em;box-sizing: border-box;text-align: center;}div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}div.sk-estimator {font-family: monospace;background-color: #f0f8ff;margin: 0.25em 0.25em;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;}div.sk-estimator:hover {background-color: #d4ebff;}div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;}div.sk-item {z-index: 1;}div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;}div.sk-parallel-item {display: flex;flex-direction: column;position: relative;background-color: white;}div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}div.sk-parallel-item:only-child::after {width: 0;}div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0.2em;box-sizing: border-box;padding-bottom: 0.1em;background-color: white;position: relative;}div.sk-label label {font-family: monospace;font-weight: bold;background-color: white;display: inline-block;line-height: 1.2em;}div.sk-label-container {position: relative;z-index: 2;text-align: center;}div.sk-container {display: inline-block;position: relative;}</style><div class="sk-top-container"><div class="sk-container"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="5f535e70-ec0f-4211-80f8-ea3ba8ef8f28" type="checkbox" ><label class="sk-toggleable__label" for="5f535e70-ec0f-4211-80f8-ea3ba8ef8f28">Pipeline</label><div class="sk-toggleable__content"><pre>Pipeline(steps=[('preprocesser',
-                 ColumnTransformer(transformers=[('num',
-                                                  Pipeline(steps=[('imputer',
-                                                                   SimpleImputer(strategy='median')),
-                                                                  ('scale',
-                                                                   StandardScaler())]),
-                                                  ['age', 'weight', 'systolic',
-                                                   'diastolic', 'bmi',
-                                                   'pulse_pressure', 'gluc',
-                                                   'cholesterol']),
-                                                 ('cat',
-                                                  Pipeline(steps=[('imputer',
-                                                                   SimpleImputer(fill_value='missing',
-                                                                                 strategy='constant')),
-                                                                  ('encoder',
-                                                                   OneHotEncoder(handle_unknown='ignore',
-                                                                                 sparse=False))]),
-                                                  ['gender', 'smoke', 'alco',
-                                                   'active', 'bp_cat',
-                                                   'bmi_cat',
-                                                   'age_by_decade'])])),
-                ('knn', KNeighborsClassifier())])</pre></div></div></div><div class="sk-serial"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="9697e6cd-7caf-4491-815a-1962e4d04b6e" type="checkbox" ><label class="sk-toggleable__label" for="9697e6cd-7caf-4491-815a-1962e4d04b6e">preprocesser: ColumnTransformer</label><div class="sk-toggleable__content"><pre>ColumnTransformer(transformers=[('num',
-                                 Pipeline(steps=[('imputer',
-                                                  SimpleImputer(strategy='median')),
-                                                 ('scale', StandardScaler())]),
-                                 ['age', 'weight', 'systolic', 'diastolic',
-                                  'bmi', 'pulse_pressure', 'gluc',
-                                  'cholesterol']),
-                                ('cat',
-                                 Pipeline(steps=[('imputer',
-                                                  SimpleImputer(fill_value='missing',
-                                                                strategy='constant')),
-                                                 ('encoder',
-                                                  OneHotEncoder(handle_unknown='ignore',
-                                                                sparse=False))]),
-                                 ['gender', 'smoke', 'alco', 'active', 'bp_cat',
-                                  'bmi_cat', 'age_by_decade'])])</pre></div></div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="345801a0-e9fc-49ef-ad7e-0dc499535301" type="checkbox" ><label class="sk-toggleable__label" for="345801a0-e9fc-49ef-ad7e-0dc499535301">num</label><div class="sk-toggleable__content"><pre>['age', 'weight', 'systolic', 'diastolic', 'bmi', 'pulse_pressure', 'gluc', 'cholesterol']</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="e8faae8b-4754-4f0d-b517-77ee3e45a359" type="checkbox" ><label class="sk-toggleable__label" for="e8faae8b-4754-4f0d-b517-77ee3e45a359">SimpleImputer</label><div class="sk-toggleable__content"><pre>SimpleImputer(strategy='median')</pre></div></div></div><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="f8179a87-90be-439a-bd78-9c8107486413" type="checkbox" ><label class="sk-toggleable__label" for="f8179a87-90be-439a-bd78-9c8107486413">StandardScaler</label><div class="sk-toggleable__content"><pre>StandardScaler()</pre></div></div></div></div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="4f20ba5b-09ce-4525-8f32-bd0e7a7ca3cb" type="checkbox" ><label class="sk-toggleable__label" for="4f20ba5b-09ce-4525-8f32-bd0e7a7ca3cb">cat</label><div class="sk-toggleable__content"><pre>['gender', 'smoke', 'alco', 'active', 'bp_cat', 'bmi_cat', 'age_by_decade']</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="2901a335-f203-47ea-b01f-1944f6d48e7b" type="checkbox" ><label class="sk-toggleable__label" for="2901a335-f203-47ea-b01f-1944f6d48e7b">SimpleImputer</label><div class="sk-toggleable__content"><pre>SimpleImputer(fill_value='missing', strategy='constant')</pre></div></div></div><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="2c782659-32fa-43e0-bffc-339248a5eb2e" type="checkbox" ><label class="sk-toggleable__label" for="2c782659-32fa-43e0-bffc-339248a5eb2e">OneHotEncoder</label><div class="sk-toggleable__content"><pre>OneHotEncoder(handle_unknown='ignore', sparse=False)</pre></div></div></div></div></div></div></div></div></div></div><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="2e99854c-e92f-43f6-8498-41f5f978f6a3" type="checkbox" ><label class="sk-toggleable__label" for="2e99854c-e92f-43f6-8498-41f5f978f6a3">KNeighborsClassifier</label><div class="sk-toggleable__content"><pre>KNeighborsClassifier()</pre></div></div></div></div></div></div></div>
-
-
-
-<style>div.sk-top-container {color: black;background-color: white;}div.sk-toggleable {background-color: white;}label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.2em 0.3em;box-sizing: border-box;text-align: center;}div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}div.sk-estimator {font-family: monospace;background-color: #f0f8ff;margin: 0.25em 0.25em;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;}div.sk-estimator:hover {background-color: #d4ebff;}div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;}div.sk-item {z-index: 1;}div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;}div.sk-parallel-item {display: flex;flex-direction: column;position: relative;background-color: white;}div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}div.sk-parallel-item:only-child::after {width: 0;}div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0.2em;box-sizing: border-box;padding-bottom: 0.1em;background-color: white;position: relative;}div.sk-label label {font-family: monospace;font-weight: bold;background-color: white;display: inline-block;line-height: 1.2em;}div.sk-label-container {position: relative;z-index: 2;text-align: center;}div.sk-container {display: inline-block;position: relative;}</style><div class="sk-top-container"><div class="sk-container"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="247cec77-8db8-4d6b-bdf5-c06677eea0b1" type="checkbox" ><label class="sk-toggleable__label" for="247cec77-8db8-4d6b-bdf5-c06677eea0b1">Pipeline</label><div class="sk-toggleable__content"><pre>Pipeline(steps=[('preprocesser',
-                 ColumnTransformer(transformers=[('num',
-                                                  Pipeline(steps=[('imputer',
-                                                                   SimpleImputer(strategy='median')),
-                                                                  ('scale',
-                                                                   StandardScaler())]),
-                                                  ['age', 'weight', 'systolic',
-                                                   'diastolic', 'bmi',
-                                                   'pulse_pressure', 'gluc',
-                                                   'cholesterol']),
-                                                 ('cat',
-                                                  Pipeline(steps=[('imputer',
-                                                                   SimpleImputer(fill_value='missing',
-                                                                                 strategy='constant')),
-                                                                  ('encoder',
-                                                                   OneHotEncoder(handle_unknown='ignore',
-                                                                                 sparse=False))]),
-                                                  ['gender', 'smoke', 'alco',
-                                                   'active', 'bp_cat',
-                                                   'bmi_cat',
-                                                   'age_by_decade'])])),
-                ('svm', SVC())])</pre></div></div></div><div class="sk-serial"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="25b56b3b-dbf5-46a3-8022-181b28002a1e" type="checkbox" ><label class="sk-toggleable__label" for="25b56b3b-dbf5-46a3-8022-181b28002a1e">preprocesser: ColumnTransformer</label><div class="sk-toggleable__content"><pre>ColumnTransformer(transformers=[('num',
-                                 Pipeline(steps=[('imputer',
-                                                  SimpleImputer(strategy='median')),
-                                                 ('scale', StandardScaler())]),
-                                 ['age', 'weight', 'systolic', 'diastolic',
-                                  'bmi', 'pulse_pressure', 'gluc',
-                                  'cholesterol']),
-                                ('cat',
-                                 Pipeline(steps=[('imputer',
-                                                  SimpleImputer(fill_value='missing',
-                                                                strategy='constant')),
-                                                 ('encoder',
-                                                  OneHotEncoder(handle_unknown='ignore',
-                                                                sparse=False))]),
-                                 ['gender', 'smoke', 'alco', 'active', 'bp_cat',
-                                  'bmi_cat', 'age_by_decade'])])</pre></div></div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="668c2744-c4b8-4cca-8696-f3623ba730d3" type="checkbox" ><label class="sk-toggleable__label" for="668c2744-c4b8-4cca-8696-f3623ba730d3">num</label><div class="sk-toggleable__content"><pre>['age', 'weight', 'systolic', 'diastolic', 'bmi', 'pulse_pressure', 'gluc', 'cholesterol']</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="986b2188-21dc-4db8-9852-3fe5eff3ca98" type="checkbox" ><label class="sk-toggleable__label" for="986b2188-21dc-4db8-9852-3fe5eff3ca98">SimpleImputer</label><div class="sk-toggleable__content"><pre>SimpleImputer(strategy='median')</pre></div></div></div><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="6b4a254f-b91f-42e9-befe-3da4d3870354" type="checkbox" ><label class="sk-toggleable__label" for="6b4a254f-b91f-42e9-befe-3da4d3870354">StandardScaler</label><div class="sk-toggleable__content"><pre>StandardScaler()</pre></div></div></div></div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="7ff411dc-64ec-4c15-b49c-dd95475bfc4f" type="checkbox" ><label class="sk-toggleable__label" for="7ff411dc-64ec-4c15-b49c-dd95475bfc4f">cat</label><div class="sk-toggleable__content"><pre>['gender', 'smoke', 'alco', 'active', 'bp_cat', 'bmi_cat', 'age_by_decade']</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="f162d6c1-2836-4c0c-84c7-bbb0859ac7a1" type="checkbox" ><label class="sk-toggleable__label" for="f162d6c1-2836-4c0c-84c7-bbb0859ac7a1">SimpleImputer</label><div class="sk-toggleable__content"><pre>SimpleImputer(fill_value='missing', strategy='constant')</pre></div></div></div><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="91dc08c2-a9df-49bb-8d37-ce349e7a8df6" type="checkbox" ><label class="sk-toggleable__label" for="91dc08c2-a9df-49bb-8d37-ce349e7a8df6">OneHotEncoder</label><div class="sk-toggleable__content"><pre>OneHotEncoder(handle_unknown='ignore', sparse=False)</pre></div></div></div></div></div></div></div></div></div></div><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="03953833-8937-41d3-b4db-5aa0747b19b6" type="checkbox" ><label class="sk-toggleable__label" for="03953833-8937-41d3-b4db-5aa0747b19b6">SVC</label><div class="sk-toggleable__content"><pre>SVC()</pre></div></div></div></div></div></div></div>
-
-
-
-<style>div.sk-top-container {color: black;background-color: white;}div.sk-toggleable {background-color: white;}label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.2em 0.3em;box-sizing: border-box;text-align: center;}div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}div.sk-estimator {font-family: monospace;background-color: #f0f8ff;margin: 0.25em 0.25em;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;}div.sk-estimator:hover {background-color: #d4ebff;}div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;}div.sk-item {z-index: 1;}div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;}div.sk-parallel-item {display: flex;flex-direction: column;position: relative;background-color: white;}div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}div.sk-parallel-item:only-child::after {width: 0;}div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0.2em;box-sizing: border-box;padding-bottom: 0.1em;background-color: white;position: relative;}div.sk-label label {font-family: monospace;font-weight: bold;background-color: white;display: inline-block;line-height: 1.2em;}div.sk-label-container {position: relative;z-index: 2;text-align: center;}div.sk-container {display: inline-block;position: relative;}</style><div class="sk-top-container"><div class="sk-container"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="8f82bf81-1b79-407d-82a0-6bc13b65af0c" type="checkbox" ><label class="sk-toggleable__label" for="8f82bf81-1b79-407d-82a0-6bc13b65af0c">Pipeline</label><div class="sk-toggleable__content"><pre>Pipeline(steps=[('preprocesser',
-                 ColumnTransformer(transformers=[('num',
-                                                  Pipeline(steps=[('imputer',
-                                                                   SimpleImputer(strategy='median'))]),
-                                                  ['age', 'weight', 'systolic',
-                                                   'diastolic', 'bmi',
-                                                   'pulse_pressure', 'gluc',
-                                                   'cholesterol']),
-                                                 ('cat',
-                                                  Pipeline(steps=[('imputer',
-                                                                   SimpleImputer(fill_value='missing',
-                                                                                 strategy='constant')),
-                                                                  ('encoder',
-                                                                   OneHotEncoder(handle_unknown='ignore',
-                                                                                 sparse=False))]),
-                                                  ['gender', 'smoke', 'alco',
-                                                   'active', 'bp_cat',
-                                                   'bmi_cat',
-                                                   'age_by_decade'])])),
-                ('tree', DecisionTreeClassifier())])</pre></div></div></div><div class="sk-serial"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="13768a34-e46d-436d-a756-2e869fc9bdbd" type="checkbox" ><label class="sk-toggleable__label" for="13768a34-e46d-436d-a756-2e869fc9bdbd">preprocesser: ColumnTransformer</label><div class="sk-toggleable__content"><pre>ColumnTransformer(transformers=[('num',
-                                 Pipeline(steps=[('imputer',
-                                                  SimpleImputer(strategy='median'))]),
-                                 ['age', 'weight', 'systolic', 'diastolic',
-                                  'bmi', 'pulse_pressure', 'gluc',
-                                  'cholesterol']),
-                                ('cat',
-                                 Pipeline(steps=[('imputer',
-                                                  SimpleImputer(fill_value='missing',
-                                                                strategy='constant')),
-                                                 ('encoder',
-                                                  OneHotEncoder(handle_unknown='ignore',
-                                                                sparse=False))]),
-                                 ['gender', 'smoke', 'alco', 'active', 'bp_cat',
-                                  'bmi_cat', 'age_by_decade'])])</pre></div></div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="90511ade-f039-4cff-821b-e23328136860" type="checkbox" ><label class="sk-toggleable__label" for="90511ade-f039-4cff-821b-e23328136860">num</label><div class="sk-toggleable__content"><pre>['age', 'weight', 'systolic', 'diastolic', 'bmi', 'pulse_pressure', 'gluc', 'cholesterol']</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="9435642a-4956-49d1-823a-9be6f530b928" type="checkbox" ><label class="sk-toggleable__label" for="9435642a-4956-49d1-823a-9be6f530b928">SimpleImputer</label><div class="sk-toggleable__content"><pre>SimpleImputer(strategy='median')</pre></div></div></div></div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="14f040a9-e5b0-41de-a23b-fa05ea299779" type="checkbox" ><label class="sk-toggleable__label" for="14f040a9-e5b0-41de-a23b-fa05ea299779">cat</label><div class="sk-toggleable__content"><pre>['gender', 'smoke', 'alco', 'active', 'bp_cat', 'bmi_cat', 'age_by_decade']</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="93bac386-c23e-4c0a-8fd7-1ac5b4aab053" type="checkbox" ><label class="sk-toggleable__label" for="93bac386-c23e-4c0a-8fd7-1ac5b4aab053">SimpleImputer</label><div class="sk-toggleable__content"><pre>SimpleImputer(fill_value='missing', strategy='constant')</pre></div></div></div><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="51ae1d92-584e-4c4c-a7e2-4be612fd6abe" type="checkbox" ><label class="sk-toggleable__label" for="51ae1d92-584e-4c4c-a7e2-4be612fd6abe">OneHotEncoder</label><div class="sk-toggleable__content"><pre>OneHotEncoder(handle_unknown='ignore', sparse=False)</pre></div></div></div></div></div></div></div></div></div></div><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="adbab963-1da7-430a-8f2d-b35999010003" type="checkbox" ><label class="sk-toggleable__label" for="adbab963-1da7-430a-8f2d-b35999010003">DecisionTreeClassifier</label><div class="sk-toggleable__content"><pre>DecisionTreeClassifier()</pre></div></div></div></div></div></div></div>
-
-
-
-<style>div.sk-top-container {color: black;background-color: white;}div.sk-toggleable {background-color: white;}label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.2em 0.3em;box-sizing: border-box;text-align: center;}div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}div.sk-estimator {font-family: monospace;background-color: #f0f8ff;margin: 0.25em 0.25em;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;}div.sk-estimator:hover {background-color: #d4ebff;}div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;}div.sk-item {z-index: 1;}div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;}div.sk-parallel-item {display: flex;flex-direction: column;position: relative;background-color: white;}div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}div.sk-parallel-item:only-child::after {width: 0;}div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0.2em;box-sizing: border-box;padding-bottom: 0.1em;background-color: white;position: relative;}div.sk-label label {font-family: monospace;font-weight: bold;background-color: white;display: inline-block;line-height: 1.2em;}div.sk-label-container {position: relative;z-index: 2;text-align: center;}div.sk-container {display: inline-block;position: relative;}</style><div class="sk-top-container"><div class="sk-container"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="8c08873a-cf8b-42e9-98cf-31be55039c55" type="checkbox" ><label class="sk-toggleable__label" for="8c08873a-cf8b-42e9-98cf-31be55039c55">Pipeline</label><div class="sk-toggleable__content"><pre>Pipeline(steps=[('preprocesser',
-                 ColumnTransformer(transformers=[('num',
-                                                  Pipeline(steps=[('imputer',
-                                                                   SimpleImputer(strategy='median'))]),
-                                                  ['age', 'weight', 'systolic',
-                                                   'diastolic', 'bmi',
-                                                   'pulse_pressure', 'gluc',
-                                                   'cholesterol']),
-                                                 ('cat',
-                                                  Pipeline(steps=[('imputer',
-                                                                   SimpleImputer(fill_value='missing',
-                                                                                 strategy='constant')),
-                                                                  ('encoder',
-                                                                   OneHotEncoder(handle_unknown='ignore',
-                                                                                 sparse=False))]),
-                                                  ['gender', 'smoke', 'alco',
-                                                   'active', 'bp_cat',
-                                                   'bmi_cat',
-                                                   'age_by_decade'])])),
-                ('rf', RandomForestClassifier())])</pre></div></div></div><div class="sk-serial"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="fd6e04c2-6f60-4345-9617-666b84645271" type="checkbox" ><label class="sk-toggleable__label" for="fd6e04c2-6f60-4345-9617-666b84645271">preprocesser: ColumnTransformer</label><div class="sk-toggleable__content"><pre>ColumnTransformer(transformers=[('num',
-                                 Pipeline(steps=[('imputer',
-                                                  SimpleImputer(strategy='median'))]),
-                                 ['age', 'weight', 'systolic', 'diastolic',
-                                  'bmi', 'pulse_pressure', 'gluc',
-                                  'cholesterol']),
-                                ('cat',
-                                 Pipeline(steps=[('imputer',
-                                                  SimpleImputer(fill_value='missing',
-                                                                strategy='constant')),
-                                                 ('encoder',
-                                                  OneHotEncoder(handle_unknown='ignore',
-                                                                sparse=False))]),
-                                 ['gender', 'smoke', 'alco', 'active', 'bp_cat',
-                                  'bmi_cat', 'age_by_decade'])])</pre></div></div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="bc6a9941-2208-46c1-bb9c-6f7ad5268a9f" type="checkbox" ><label class="sk-toggleable__label" for="bc6a9941-2208-46c1-bb9c-6f7ad5268a9f">num</label><div class="sk-toggleable__content"><pre>['age', 'weight', 'systolic', 'diastolic', 'bmi', 'pulse_pressure', 'gluc', 'cholesterol']</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="335e9dda-b4e7-4a20-a07b-e2dc19fdf372" type="checkbox" ><label class="sk-toggleable__label" for="335e9dda-b4e7-4a20-a07b-e2dc19fdf372">SimpleImputer</label><div class="sk-toggleable__content"><pre>SimpleImputer(strategy='median')</pre></div></div></div></div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="e80d1c7c-7f0f-42e2-927f-083a097540bb" type="checkbox" ><label class="sk-toggleable__label" for="e80d1c7c-7f0f-42e2-927f-083a097540bb">cat</label><div class="sk-toggleable__content"><pre>['gender', 'smoke', 'alco', 'active', 'bp_cat', 'bmi_cat', 'age_by_decade']</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="4b3c7945-6c5b-4f63-ac67-32610d6183b0" type="checkbox" ><label class="sk-toggleable__label" for="4b3c7945-6c5b-4f63-ac67-32610d6183b0">SimpleImputer</label><div class="sk-toggleable__content"><pre>SimpleImputer(fill_value='missing', strategy='constant')</pre></div></div></div><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="ed18ad0a-a6ac-48f4-b35d-a681fe36f239" type="checkbox" ><label class="sk-toggleable__label" for="ed18ad0a-a6ac-48f4-b35d-a681fe36f239">OneHotEncoder</label><div class="sk-toggleable__content"><pre>OneHotEncoder(handle_unknown='ignore', sparse=False)</pre></div></div></div></div></div></div></div></div></div></div><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="51667160-9e8f-4e50-a5b4-88a8cb48a95a" type="checkbox" ><label class="sk-toggleable__label" for="51667160-9e8f-4e50-a5b4-88a8cb48a95a">RandomForestClassifier</label><div class="sk-toggleable__content"><pre>RandomForestClassifier()</pre></div></div></div></div></div></div></div>
-
-
-
-<style>div.sk-top-container {color: black;background-color: white;}div.sk-toggleable {background-color: white;}label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.2em 0.3em;box-sizing: border-box;text-align: center;}div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}div.sk-estimator {font-family: monospace;background-color: #f0f8ff;margin: 0.25em 0.25em;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;}div.sk-estimator:hover {background-color: #d4ebff;}div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;}div.sk-item {z-index: 1;}div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;}div.sk-parallel-item {display: flex;flex-direction: column;position: relative;background-color: white;}div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}div.sk-parallel-item:only-child::after {width: 0;}div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0.2em;box-sizing: border-box;padding-bottom: 0.1em;background-color: white;position: relative;}div.sk-label label {font-family: monospace;font-weight: bold;background-color: white;display: inline-block;line-height: 1.2em;}div.sk-label-container {position: relative;z-index: 2;text-align: center;}div.sk-container {display: inline-block;position: relative;}</style><div class="sk-top-container"><div class="sk-container"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="6bdaa346-fe46-4c61-aa90-d593bdd19438" type="checkbox" ><label class="sk-toggleable__label" for="6bdaa346-fe46-4c61-aa90-d593bdd19438">Pipeline</label><div class="sk-toggleable__content"><pre>Pipeline(steps=[('preprocesser',
-                 ColumnTransformer(transformers=[('num',
-                                                  Pipeline(steps=[('imputer',
-                                                                   SimpleImputer(strategy='median'))]),
-                                                  ['age', 'weight', 'systolic',
-                                                   'diastolic', 'bmi',
-                                                   'pulse_pressure', 'gluc',
-                                                   'cholesterol']),
-                                                 ('cat',
-                                                  Pipeline(steps=[('imputer',
-                                                                   SimpleImputer(fill_value='missing',
-                                                                                 strategy='constant')),
-                                                                  ('encoder',
-                                                                   OneHotEncoder(handle_unknown='ignore',
-                                                                                 sparse=False))]),
-                                                  ['gender', 'smoke', 'alco',
-                                                   'active', 'bp_cat',
-                                                   'bmi_cat',
-                                                   'age_by_decade'])])),
-                ('xgb', XGBClassifier())])</pre></div></div></div><div class="sk-serial"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="433fca97-66cf-4db5-9f71-c8ced0174ebc" type="checkbox" ><label class="sk-toggleable__label" for="433fca97-66cf-4db5-9f71-c8ced0174ebc">preprocesser: ColumnTransformer</label><div class="sk-toggleable__content"><pre>ColumnTransformer(transformers=[('num',
-                                 Pipeline(steps=[('imputer',
-                                                  SimpleImputer(strategy='median'))]),
-                                 ['age', 'weight', 'systolic', 'diastolic',
-                                  'bmi', 'pulse_pressure', 'gluc',
-                                  'cholesterol']),
-                                ('cat',
-                                 Pipeline(steps=[('imputer',
-                                                  SimpleImputer(fill_value='missing',
-                                                                strategy='constant')),
-                                                 ('encoder',
-                                                  OneHotEncoder(handle_unknown='ignore',
-                                                                sparse=False))]),
-                                 ['gender', 'smoke', 'alco', 'active', 'bp_cat',
-                                  'bmi_cat', 'age_by_decade'])])</pre></div></div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="8800f230-9ae7-4d1d-97a1-eb410c5094aa" type="checkbox" ><label class="sk-toggleable__label" for="8800f230-9ae7-4d1d-97a1-eb410c5094aa">num</label><div class="sk-toggleable__content"><pre>['age', 'weight', 'systolic', 'diastolic', 'bmi', 'pulse_pressure', 'gluc', 'cholesterol']</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="1dad8285-2099-4933-a998-819e73f48aba" type="checkbox" ><label class="sk-toggleable__label" for="1dad8285-2099-4933-a998-819e73f48aba">SimpleImputer</label><div class="sk-toggleable__content"><pre>SimpleImputer(strategy='median')</pre></div></div></div></div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="4b91cca9-1606-4303-9cb2-07b1cb4356b1" type="checkbox" ><label class="sk-toggleable__label" for="4b91cca9-1606-4303-9cb2-07b1cb4356b1">cat</label><div class="sk-toggleable__content"><pre>['gender', 'smoke', 'alco', 'active', 'bp_cat', 'bmi_cat', 'age_by_decade']</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="b06a6148-ada0-45ad-a52e-6410f3a903f8" type="checkbox" ><label class="sk-toggleable__label" for="b06a6148-ada0-45ad-a52e-6410f3a903f8">SimpleImputer</label><div class="sk-toggleable__content"><pre>SimpleImputer(fill_value='missing', strategy='constant')</pre></div></div></div><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="bc2230e0-d575-4837-93e7-23ac8726b062" type="checkbox" ><label class="sk-toggleable__label" for="bc2230e0-d575-4837-93e7-23ac8726b062">OneHotEncoder</label><div class="sk-toggleable__content"><pre>OneHotEncoder(handle_unknown='ignore', sparse=False)</pre></div></div></div></div></div></div></div></div></div></div><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="b5bf2d3a-2e57-43fd-bdba-2b78b2b73741" type="checkbox" ><label class="sk-toggleable__label" for="b5bf2d3a-2e57-43fd-bdba-2b78b2b73741">XGBClassifier</label><div class="sk-toggleable__content"><pre>XGBClassifier()</pre></div></div></div></div></div></div></div>
-
 
 We then run each model through our evaulate_classification function to determine the best vanilla models we want to further fine tune.
 
@@ -1669,7 +1478,7 @@ for key, pipe in multi_pipes.items():
     ------------------------------------------------------------
     ------------------------------------------------------------
     Training data score: 0.9763594671325617
-    Test data score: 0.6314601834328141
+    Test data score: 0.6323336730237298
     ------------------------------------------------------------
     
     Model may be Overfitting
@@ -1699,7 +1508,7 @@ for key, pipe in multi_pipes.items():
     ------------------------------------------------------------
     ------------------------------------------------------------
     Training data score: 0.9763412681080295
-    Test data score: 0.6996651623234823
+    Test data score: 0.7001019071189402
     ------------------------------------------------------------
     
     Model may be Overfitting
@@ -1804,52 +1613,9 @@ best_rf = pickling(name='best_rf', task='load')
 
 
 ```python
-with sklearn.config_context(display='diagram'):
-    display(best_rf)
+# with sklearn.config_context(display='diagram'):
+#     display(best_rf)
 ```
-
-
-<style>div.sk-top-container {color: black;background-color: white;}div.sk-toggleable {background-color: white;}label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.2em 0.3em;box-sizing: border-box;text-align: center;}div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}div.sk-estimator {font-family: monospace;background-color: #f0f8ff;margin: 0.25em 0.25em;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;}div.sk-estimator:hover {background-color: #d4ebff;}div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;}div.sk-item {z-index: 1;}div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;}div.sk-parallel-item {display: flex;flex-direction: column;position: relative;background-color: white;}div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}div.sk-parallel-item:only-child::after {width: 0;}div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0.2em;box-sizing: border-box;padding-bottom: 0.1em;background-color: white;position: relative;}div.sk-label label {font-family: monospace;font-weight: bold;background-color: white;display: inline-block;line-height: 1.2em;}div.sk-label-container {position: relative;z-index: 2;text-align: center;}div.sk-container {display: inline-block;position: relative;}</style><div class="sk-top-container"><div class="sk-container"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="66a0720f-68a3-4326-b610-02d15767e848" type="checkbox" ><label class="sk-toggleable__label" for="66a0720f-68a3-4326-b610-02d15767e848">Pipeline</label><div class="sk-toggleable__content"><pre>Pipeline(steps=[('preprocesser',
-                 ColumnTransformer(transformers=[('num',
-                                                  Pipeline(steps=[('imputer',
-                                                                   SimpleImputer(strategy='median'))]),
-                                                  ['age', 'weight', 'systolic',
-                                                   'diastolic', 'bmi',
-                                                   'pulse_pressure', 'gluc',
-                                                   'cholesterol']),
-                                                 ('cat',
-                                                  Pipeline(steps=[('imputer',
-                                                                   SimpleImputer(fill_value='missing',
-                                                                                 strategy='constant')),
-                                                                  ('encoder',
-                                                                   OneHotEncoder(handle_unknown='ignore',
-                                                                                 sparse=False))]),
-                                                  ['gender', 'smoke', 'alco',
-                                                   'active', 'bp_cat',
-                                                   'bmi_cat',
-                                                   'age_by_decade'])])),
-                ('rf',
-                 RandomForestClassifier(criterion='entropy', max_depth=15,
-                                        max_features=10, min_samples_leaf=5,
-                                        min_samples_split=100, n_estimators=300,
-                                        oob_score=True))])</pre></div></div></div><div class="sk-serial"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="26d206ba-fbbd-4abe-ab97-60f262d90ed5" type="checkbox" ><label class="sk-toggleable__label" for="26d206ba-fbbd-4abe-ab97-60f262d90ed5">preprocesser: ColumnTransformer</label><div class="sk-toggleable__content"><pre>ColumnTransformer(transformers=[('num',
-                                 Pipeline(steps=[('imputer',
-                                                  SimpleImputer(strategy='median'))]),
-                                 ['age', 'weight', 'systolic', 'diastolic',
-                                  'bmi', 'pulse_pressure', 'gluc',
-                                  'cholesterol']),
-                                ('cat',
-                                 Pipeline(steps=[('imputer',
-                                                  SimpleImputer(fill_value='missing',
-                                                                strategy='constant')),
-                                                 ('encoder',
-                                                  OneHotEncoder(handle_unknown='ignore',
-                                                                sparse=False))]),
-                                 ['gender', 'smoke', 'alco', 'active', 'bp_cat',
-                                  'bmi_cat', 'age_by_decade'])])</pre></div></div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="e034a035-1730-4648-aac6-cdfc6713c79e" type="checkbox" ><label class="sk-toggleable__label" for="e034a035-1730-4648-aac6-cdfc6713c79e">num</label><div class="sk-toggleable__content"><pre>['age', 'weight', 'systolic', 'diastolic', 'bmi', 'pulse_pressure', 'gluc', 'cholesterol']</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="3fb27919-cb10-40e2-9c5f-e0fbf3fa46d7" type="checkbox" ><label class="sk-toggleable__label" for="3fb27919-cb10-40e2-9c5f-e0fbf3fa46d7">SimpleImputer</label><div class="sk-toggleable__content"><pre>SimpleImputer(strategy='median')</pre></div></div></div></div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="49b7579e-cc42-4748-bd2a-7a4385dad9dc" type="checkbox" ><label class="sk-toggleable__label" for="49b7579e-cc42-4748-bd2a-7a4385dad9dc">cat</label><div class="sk-toggleable__content"><pre>['gender', 'smoke', 'alco', 'active', 'bp_cat', 'bmi_cat', 'age_by_decade']</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="22e3e6cb-1bbd-4770-8762-a87acdc8bfa0" type="checkbox" ><label class="sk-toggleable__label" for="22e3e6cb-1bbd-4770-8762-a87acdc8bfa0">SimpleImputer</label><div class="sk-toggleable__content"><pre>SimpleImputer(fill_value='missing', strategy='constant')</pre></div></div></div><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="c762c75a-06c0-471e-b026-4d5b882f8755" type="checkbox" ><label class="sk-toggleable__label" for="c762c75a-06c0-471e-b026-4d5b882f8755">OneHotEncoder</label><div class="sk-toggleable__content"><pre>OneHotEncoder(handle_unknown='ignore', sparse=False)</pre></div></div></div></div></div></div></div></div></div></div><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="2e0c4aa8-a77b-4cde-8444-e289c07a0971" type="checkbox" ><label class="sk-toggleable__label" for="2e0c4aa8-a77b-4cde-8444-e289c07a0971">RandomForestClassifier</label><div class="sk-toggleable__content"><pre>RandomForestClassifier(criterion='entropy', max_depth=15, max_features=10,
-                       min_samples_leaf=5, min_samples_split=100,
-                       n_estimators=300, oob_score=True)</pre></div></div></div></div></div></div></div>
-
 
 
 ```python
@@ -2008,98 +1774,9 @@ stack_clf = StackingClassifier(estimators=estimators)
 
 
 ```python
-with sklearn.config_context(display='diagram'):
-    display(stack_clf.fit(X_train, y_train))
+# with sklearn.config_context(display='diagram'):
+#     display(stack_clf.fit(X_train, y_train))
 ```
-
-
-<style>div.sk-top-container {color: black;background-color: white;}div.sk-toggleable {background-color: white;}label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.2em 0.3em;box-sizing: border-box;text-align: center;}div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}div.sk-estimator {font-family: monospace;background-color: #f0f8ff;margin: 0.25em 0.25em;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;}div.sk-estimator:hover {background-color: #d4ebff;}div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;}div.sk-item {z-index: 1;}div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;}div.sk-parallel-item {display: flex;flex-direction: column;position: relative;background-color: white;}div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}div.sk-parallel-item:only-child::after {width: 0;}div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0.2em;box-sizing: border-box;padding-bottom: 0.1em;background-color: white;position: relative;}div.sk-label label {font-family: monospace;font-weight: bold;background-color: white;display: inline-block;line-height: 1.2em;}div.sk-label-container {position: relative;z-index: 2;text-align: center;}div.sk-container {display: inline-block;position: relative;}</style><div class="sk-top-container"><div class="sk-container"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="7d3275a3-2540-4e4d-9993-6dd4f38e4060" type="checkbox" ><label class="sk-toggleable__label" for="7d3275a3-2540-4e4d-9993-6dd4f38e4060">StackingClassifier</label><div class="sk-toggleable__content"><pre>StackingClassifier(estimators=[('rf',
-                                Pipeline(steps=[('preprocesser',
-                                                 ColumnTransformer(transformers=[('num',
-                                                                                  Pipeline(steps=[('imputer',
-                                                                                                   SimpleImputer(strategy='median'))]),
-                                                                                  ['age',
-                                                                                   'weight',
-                                                                                   'systolic',
-                                                                                   'diastolic',
-                                                                                   'bmi',
-                                                                                   'pulse_pressure',
-                                                                                   'gluc',
-                                                                                   'cholesterol']),
-                                                                                 ('cat',
-                                                                                  Pipeline(steps=[('imputer',
-                                                                                                   SimpleImputer(fill_value='missing',
-                                                                                                                 strategy='constant')),
-                                                                                                  ('e...
-                                                                                                   StandardScaler())]),
-                                                                                  ['age',
-                                                                                   'weight',
-                                                                                   'systolic',
-                                                                                   'diastolic',
-                                                                                   'bmi',
-                                                                                   'pulse_pressure',
-                                                                                   'gluc',
-                                                                                   'cholesterol']),
-                                                                                 ('cat',
-                                                                                  Pipeline(steps=[('imputer',
-                                                                                                   SimpleImputer(fill_value='missing',
-                                                                                                                 strategy='constant')),
-                                                                                                  ('encoder',
-                                                                                                   OneHotEncoder(handle_unknown='ignore',
-                                                                                                                 sparse=False))]),
-                                                                                  ['gender',
-                                                                                   'smoke',
-                                                                                   'alco',
-                                                                                   'active',
-                                                                                   'bp_cat',
-                                                                                   'bmi_cat',
-                                                                                   'age_by_decade'])])),
-                                                ('svm', SVC())]))])</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label sk-toggleable"><label>rf</label></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="0d0df5b9-5690-4f61-b5ab-bd3edb2492c3" type="checkbox" ><label class="sk-toggleable__label" for="0d0df5b9-5690-4f61-b5ab-bd3edb2492c3">preprocesser: ColumnTransformer</label><div class="sk-toggleable__content"><pre>ColumnTransformer(transformers=[('num',
-                                 Pipeline(steps=[('imputer',
-                                                  SimpleImputer(strategy='median'))]),
-                                 ['age', 'weight', 'systolic', 'diastolic',
-                                  'bmi', 'pulse_pressure', 'gluc',
-                                  'cholesterol']),
-                                ('cat',
-                                 Pipeline(steps=[('imputer',
-                                                  SimpleImputer(fill_value='missing',
-                                                                strategy='constant')),
-                                                 ('encoder',
-                                                  OneHotEncoder(handle_unknown='ignore',
-                                                                sparse=False))]),
-                                 ['gender', 'smoke', 'alco', 'active', 'bp_cat',
-                                  'bmi_cat', 'age_by_decade'])])</pre></div></div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="c97ce0ec-013e-41ee-9560-cb2a3cda20f5" type="checkbox" ><label class="sk-toggleable__label" for="c97ce0ec-013e-41ee-9560-cb2a3cda20f5">num</label><div class="sk-toggleable__content"><pre>['age', 'weight', 'systolic', 'diastolic', 'bmi', 'pulse_pressure', 'gluc', 'cholesterol']</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="8c7c6e1b-d9b7-4ebc-88f8-69e481d55df2" type="checkbox" ><label class="sk-toggleable__label" for="8c7c6e1b-d9b7-4ebc-88f8-69e481d55df2">SimpleImputer</label><div class="sk-toggleable__content"><pre>SimpleImputer(strategy='median')</pre></div></div></div></div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="e601ef7d-11aa-454f-bf33-66645e36df06" type="checkbox" ><label class="sk-toggleable__label" for="e601ef7d-11aa-454f-bf33-66645e36df06">cat</label><div class="sk-toggleable__content"><pre>['gender', 'smoke', 'alco', 'active', 'bp_cat', 'bmi_cat', 'age_by_decade']</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="5120dc8a-66f9-455f-bb9c-ff4bc07b6283" type="checkbox" ><label class="sk-toggleable__label" for="5120dc8a-66f9-455f-bb9c-ff4bc07b6283">SimpleImputer</label><div class="sk-toggleable__content"><pre>SimpleImputer(fill_value='missing', strategy='constant')</pre></div></div></div><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="3588b95c-8342-46a8-8c68-4862e1dea720" type="checkbox" ><label class="sk-toggleable__label" for="3588b95c-8342-46a8-8c68-4862e1dea720">OneHotEncoder</label><div class="sk-toggleable__content"><pre>OneHotEncoder(handle_unknown='ignore', sparse=False)</pre></div></div></div></div></div></div></div></div></div></div><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="4d63e5dc-cf17-47f9-95da-151bb5710357" type="checkbox" ><label class="sk-toggleable__label" for="4d63e5dc-cf17-47f9-95da-151bb5710357">RandomForestClassifier</label><div class="sk-toggleable__content"><pre>RandomForestClassifier(max_features=None, min_samples_leaf=42, n_estimators=129,
-                       oob_score=True)</pre></div></div></div></div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label sk-toggleable"><label>xgb</label></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="d3cdf743-a991-4e0b-bdf4-c63f4b62bbee" type="checkbox" ><label class="sk-toggleable__label" for="d3cdf743-a991-4e0b-bdf4-c63f4b62bbee">preprocesser: ColumnTransformer</label><div class="sk-toggleable__content"><pre>ColumnTransformer(transformers=[('num',
-                                 Pipeline(steps=[('imputer',
-                                                  SimpleImputer(strategy='median'))]),
-                                 ['age', 'weight', 'systolic', 'diastolic',
-                                  'bmi', 'pulse_pressure', 'gluc',
-                                  'cholesterol']),
-                                ('cat',
-                                 Pipeline(steps=[('imputer',
-                                                  SimpleImputer(fill_value='missing',
-                                                                strategy='constant')),
-                                                 ('encoder',
-                                                  OneHotEncoder(handle_unknown='ignore',
-                                                                sparse=False))]),
-                                 ['gender', 'smoke', 'alco', 'active', 'bp_cat',
-                                  'bmi_cat', 'age_by_decade'])])</pre></div></div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="4fe58f53-762d-4ce2-b2c6-a091577bd57d" type="checkbox" ><label class="sk-toggleable__label" for="4fe58f53-762d-4ce2-b2c6-a091577bd57d">num</label><div class="sk-toggleable__content"><pre>['age', 'weight', 'systolic', 'diastolic', 'bmi', 'pulse_pressure', 'gluc', 'cholesterol']</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="b0e2d2cb-2c04-424c-8482-ad171aaa659d" type="checkbox" ><label class="sk-toggleable__label" for="b0e2d2cb-2c04-424c-8482-ad171aaa659d">SimpleImputer</label><div class="sk-toggleable__content"><pre>SimpleImputer(strategy='median')</pre></div></div></div></div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="1b0db71e-6e4e-46bc-8618-ef073954878e" type="checkbox" ><label class="sk-toggleable__label" for="1b0db71e-6e4e-46bc-8618-ef073954878e">cat</label><div class="sk-toggleable__content"><pre>['gender', 'smoke', 'alco', 'active', 'bp_cat', 'bmi_cat', 'age_by_decade']</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="df3eaaaf-0af5-4bb5-9546-4adfc0bce621" type="checkbox" ><label class="sk-toggleable__label" for="df3eaaaf-0af5-4bb5-9546-4adfc0bce621">SimpleImputer</label><div class="sk-toggleable__content"><pre>SimpleImputer(fill_value='missing', strategy='constant')</pre></div></div></div><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="61cad259-ae15-4b51-9db8-2a96b91ef881" type="checkbox" ><label class="sk-toggleable__label" for="61cad259-ae15-4b51-9db8-2a96b91ef881">OneHotEncoder</label><div class="sk-toggleable__content"><pre>OneHotEncoder(handle_unknown='ignore', sparse=False)</pre></div></div></div></div></div></div></div></div></div></div><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="9265174f-4231-4cf6-9f4c-a699be1024e1" type="checkbox" ><label class="sk-toggleable__label" for="9265174f-4231-4cf6-9f4c-a699be1024e1">XGBClassifier</label><div class="sk-toggleable__content"><pre>XGBClassifier()</pre></div></div></div></div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label sk-toggleable"><label>svc</label></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="5aec4792-0d15-4b87-8e69-7055c2ec71f3" type="checkbox" ><label class="sk-toggleable__label" for="5aec4792-0d15-4b87-8e69-7055c2ec71f3">preprocesser: ColumnTransformer</label><div class="sk-toggleable__content"><pre>ColumnTransformer(transformers=[('num',
-                                 Pipeline(steps=[('imputer',
-                                                  SimpleImputer(strategy='median')),
-                                                 ('scale', StandardScaler())]),
-                                 ['age', 'weight', 'systolic', 'diastolic',
-                                  'bmi', 'pulse_pressure', 'gluc',
-                                  'cholesterol']),
-                                ('cat',
-                                 Pipeline(steps=[('imputer',
-                                                  SimpleImputer(fill_value='missing',
-                                                                strategy='constant')),
-                                                 ('encoder',
-                                                  OneHotEncoder(handle_unknown='ignore',
-                                                                sparse=False))]),
-                                 ['gender', 'smoke', 'alco', 'active', 'bp_cat',
-                                  'bmi_cat', 'age_by_decade'])])</pre></div></div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="13eac28e-87bf-4cc0-8e07-78991a79a8e6" type="checkbox" ><label class="sk-toggleable__label" for="13eac28e-87bf-4cc0-8e07-78991a79a8e6">num</label><div class="sk-toggleable__content"><pre>['age', 'weight', 'systolic', 'diastolic', 'bmi', 'pulse_pressure', 'gluc', 'cholesterol']</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="34467a6e-4408-4228-b0f5-1c26468526a0" type="checkbox" ><label class="sk-toggleable__label" for="34467a6e-4408-4228-b0f5-1c26468526a0">SimpleImputer</label><div class="sk-toggleable__content"><pre>SimpleImputer(strategy='median')</pre></div></div></div><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="473d0766-bc2a-4efb-a41f-5d935d848ac3" type="checkbox" ><label class="sk-toggleable__label" for="473d0766-bc2a-4efb-a41f-5d935d848ac3">StandardScaler</label><div class="sk-toggleable__content"><pre>StandardScaler()</pre></div></div></div></div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="43602ad3-e8ba-4ab1-9d2f-bce3e13511ab" type="checkbox" ><label class="sk-toggleable__label" for="43602ad3-e8ba-4ab1-9d2f-bce3e13511ab">cat</label><div class="sk-toggleable__content"><pre>['gender', 'smoke', 'alco', 'active', 'bp_cat', 'bmi_cat', 'age_by_decade']</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="04312475-00e4-44a7-b24c-743f9b567bdd" type="checkbox" ><label class="sk-toggleable__label" for="04312475-00e4-44a7-b24c-743f9b567bdd">SimpleImputer</label><div class="sk-toggleable__content"><pre>SimpleImputer(fill_value='missing', strategy='constant')</pre></div></div></div><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="2625e2ee-5707-43c5-bb78-eaad1fcd05f5" type="checkbox" ><label class="sk-toggleable__label" for="2625e2ee-5707-43c5-bb78-eaad1fcd05f5">OneHotEncoder</label><div class="sk-toggleable__content"><pre>OneHotEncoder(handle_unknown='ignore', sparse=False)</pre></div></div></div></div></div></div></div></div></div></div><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="e8182b6b-f315-4a28-8625-db57e37a2ddf" type="checkbox" ><label class="sk-toggleable__label" for="e8182b6b-f315-4a28-8625-db57e37a2ddf">SVC</label><div class="sk-toggleable__content"><pre>SVC()</pre></div></div></div></div></div></div></div></div></div></div><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="78c6aa4d-1a37-473e-95a1-722861f9563f" type="checkbox" ><label class="sk-toggleable__label" for="78c6aa4d-1a37-473e-95a1-722861f9563f">LogisticRegression</label><div class="sk-toggleable__content"><pre>LogisticRegression()</pre></div></div></div></div></div></div></div></div></div>
-
 
 
 ```python
@@ -2151,7 +1828,8 @@ best_xgb.named_steps['xgb'].get_params
 
 
 
-    <bound method XGBModel.get_params of XGBClassifier(gamma=5, max_depth=5, min_child_weight=3, missing=nan)>
+    <bound method XGBModel.get_params of XGBClassifier(gamma=3, learning_rate=0.001, max_depth=15, min_child_weight=3,
+                  missing=nan, subsample=0.5)>
 
 
 
