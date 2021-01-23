@@ -1,14 +1,6 @@
-<div style="background-color:#ff6666;
-font-weight:bold;
-font-size:5.2rem;
-display:block;
-width:80%;
-padding:1.2em;
-align:center;">
+# Module 3 Project
 
-Module 3 Project
-
-# Introduction
+## Introduction
 
 
 ### Goals:
@@ -326,7 +318,7 @@ ax.set_title('Distribution of Age in Dataset');
 ```
 
 
-![png](output_27_0.png)
+![png](images/output_27_0.png)
 
 
 Our age range in this dataset contains patients from 30 - 65 years of age.
@@ -343,7 +335,7 @@ ax.set_title('Gender Countplot');
 ```
 
 
-![png](output_31_0.png)
+![png](images/output_31_0.png)
 
 
 
@@ -475,7 +467,7 @@ frequency_plot(df_clean, group='bp_cat', target='cvd', order=order,
 ```
 
 
-![png](output_43_0.png)
+![png](images/output_43_0.png)
 
 
 According to our plot, those who have hypertension 2 or greater are much more likely to have a CVD. Those with a normal blood pressure seem to be less likely to have a CVD. Those with hypertension 1 have a greater chance of having a CVD than those with a normal blood pressure. 
@@ -542,7 +534,7 @@ frequency_plot(df_clean, group='bmi_cat', target='cvd', order=order,
 ```
 
 
-![png](output_49_0.png)
+![png](images/output_49_0.png)
 
 
 According to this graph, if a person is overweight or obese, they are more likely to have a CVD than a person who has a normal BMI.
@@ -565,7 +557,7 @@ frequency_plot(df_clean, group='gluc', target='cvd',
 ```
 
 
-![png](output_54_0.png)
+![png](images/output_54_0.png)
 
 
 It seems that if a person has an above normal or very above normal glucose level (2 or 3), they may be more at risk of having a CVD when compared to a person who has a normal glucose level (1).
@@ -601,7 +593,7 @@ frequency_plot(df_clean, group='cholesterol', target='cvd',
 ```
 
 
-![png](output_59_0.png)
+![png](images/output_59_0.png)
 
 
 It seems there is definitely a relationship between the prevalence of having a cardiovascular disease and higher than normal cholesterol levels.
@@ -627,7 +619,7 @@ frequency_plot(df_clean, 'smoke', 'cvd', title='Prevalence of CVD in Non-Smokers
 ```
 
 
-![png](output_62_0.png)
+![png](images/output_62_0.png)
 
 
 
@@ -644,15 +636,15 @@ frequency_plot(df_clean, 'alco', 'cvd',
 ```
 
 
-![png](output_63_0.png)
+![png](images/output_63_0.png)
 
 
 
-![png](output_63_1.png)
+![png](images/output_63_1.png)
 
 
 
-![png](output_63_2.png)
+![png](images/output_63_2.png)
 
 
 According to these graphs, it seems that there is little to no relationship between CVD and smoking or drinking.
@@ -835,7 +827,7 @@ frequency_plot(df_clean, 'age_by_decade', 'cvd', order=order,
 ```
 
 
-![png](output_70_0.png)
+![png](images/output_70_0.png)
 
 
 From this plot, it looks like as age increases, so does the likelihood of having a Cardiovascular Disease.
@@ -854,7 +846,7 @@ df_importance.plot(kind='barh');
 ```
 
 
-![png](output_74_0.png)
+![png](images/output_74_0.png)
 
 
 Based on this correlation plot we see that systolic, diastolic, pulse_pressure, age, cholesterol, weight, bmi, and gluc are all significant factors when predicting if someone may have a CVD.
@@ -870,7 +862,7 @@ plt.title('Blood Pressure in Relation to CVDs');
 ```
 
 
-![png](output_76_0.png)
+![png](images/output_76_0.png)
 
 
 ## Inspecting Outliers
@@ -919,31 +911,31 @@ for item in ['age', 'height', 'weight', 'systolic', 'diastolic', 'bmi',
 ```
 
 
-![png](output_87_0.png)
+![png](images/output_87_0.png)
 
 
 
-![png](output_87_1.png)
+![png](images/output_87_1.png)
 
 
 
-![png](output_87_2.png)
+![png](images/output_87_2.png)
 
 
 
-![png](output_87_3.png)
+![png](images/output_87_3.png)
 
 
 
-![png](output_87_4.png)
+![png](images/output_87_4.png)
 
 
 
-![png](output_87_5.png)
+![png](images/output_87_5.png)
 
 
 
-![png](output_87_6.png)
+![png](images/output_87_6.png)
 
 
 We are inspecting each of the columns to see the relationship between the column and the Presence of a CVD. For height, there seems to be no major difference in the distribution for people with and without a CVD. Therefore, we can safely remove this column when working with our models.
@@ -1240,7 +1232,7 @@ evaluate_classification(dummy, X_test, y_test, X_train, y_train, label='Dummy')
     
 
 
-![png](output_106_1.png)
+![png](images/output_106_1.png)
 
 
 Our Baseline Model has an accuracy of around 50%, which is as good as flipping a coin. Since we are trying to classify the best risk and protective factors when determining who has a Cardiovascular Disease, we need to make a model that's has a better accuracy than this.
@@ -1434,7 +1426,7 @@ for key, pipe in multi_pipes.items():
     
 
 
-![png](output_129_1.png)
+![png](images/output_129_1.png)
 
 
     ------------------------------------------------------------
@@ -1459,7 +1451,7 @@ for key, pipe in multi_pipes.items():
     
 
 
-![png](output_129_3.png)
+![png](images/output_129_3.png)
 
 
     ------------------------------------------------------------
@@ -1485,11 +1477,11 @@ for key, pipe in multi_pipes.items():
     
 
 
-![png](output_129_5.png)
+![png](images/output_129_5.png)
 
 
 
-![png](output_129_6.png)
+![png](images/output_129_6.png)
 
 
     ------------------------------------------------------------
@@ -1515,11 +1507,11 @@ for key, pipe in multi_pipes.items():
     
 
 
-![png](output_129_8.png)
+![png](images/output_129_8.png)
 
 
 
-![png](output_129_9.png)
+![png](images/output_129_9.png)
 
 
     ------------------------------------------------------------
@@ -1544,11 +1536,11 @@ for key, pipe in multi_pipes.items():
     
 
 
-![png](output_129_11.png)
+![png](images/output_129_11.png)
 
 
 
-![png](output_129_12.png)
+![png](images/output_129_12.png)
 
 
 ### Answer for Question 1:
@@ -1645,11 +1637,11 @@ evaluate_classification(best_rf, X_test, y_test, X_train, y_train,
     
 
 
-![png](output_141_1.png)
+![png](images/output_141_1.png)
 
 
 
-![png](output_141_2.png)
+![png](images/output_141_2.png)
 
 
 We've managed to increase the accuracy of our RandomForestClassifier by about 3% from fine tuning useing gridsearch.
@@ -1689,7 +1681,7 @@ evaluate_classification(best_svc, X_test, y_test, X_train, y_train,
     
 
 
-![png](output_145_1.png)
+![png](images/output_145_1.png)
 
 
 ### XGBoost
@@ -1727,11 +1719,11 @@ evaluate_classification(best_xgb, X_test, y_test, X_train, y_train,
     
 
 
-![png](output_148_1.png)
+![png](images/output_148_1.png)
 
 
 
-![png](output_148_2.png)
+![png](images/output_148_2.png)
 
 
 ### Answer for Question 2:
@@ -1811,7 +1803,7 @@ evaluate_classification(stack_clf, X_test, y_test, X_train, y_train)
     
 
 
-![png](output_158_1.png)
+![png](images/output_158_1.png)
 
 
 Our StackingClassifier has acheieved the highest accuracy score so far out of all the models we've run, with a 73.3% -- 0.1% better than our XGBoostClassifier model.
@@ -1930,7 +1922,7 @@ n===t._wrapperState.initialValue&&(e.value=n)}});t.exports=l},function(t,e,n){"u
 
 
 
-![png](output_166_1.png)
+![png](images/output_166_1.png)
 
 
 # Interpretation
