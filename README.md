@@ -5,7 +5,7 @@
 
 ### Goals:
 
-Cardiovascular diseases (CVDs) are the leading cause of death worldwide, claiming around 17 million lives per year. Our goals for this project will be to produce the best model(s) that identify and define both the protective and risk factors when it comes to predicting the prevalence of a CVD. Through the knowledge of these factors, we will be able to target the best primary prevention methods and help deter any possible development of some CVDs.
+Cardiovascular diseases (CVDs) are the leading cause of death worldwide, claiming around 17 million lives per year. Our goals for this project will be to produce the best model(s) that identify and define both the protective and risk factors when it comes to predicting the prevalence of a CVD. Through the knowledge of these factors, we will be able to target the best primary prevention methods and help deter any possible development of some CVDs in patients.
 
 **Questions:**
 
