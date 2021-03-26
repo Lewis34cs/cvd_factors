@@ -5,7 +5,7 @@
 
 ### Goals:
 
-Cardiovascular diseases (CVDs) are the leading cause of death worldwide, claiming around 17 million lives per year. Our goals for this project will be producing the best model(s) that identify and define both the protective and risk factors when it comes to predicting the prevalence of a CVD. Through the knowledge of these factors, we would be able to target the best primary prevention methods and help deter possible development of some CVDs.
+Cardiovascular diseases (CVDs) are the leading cause of death worldwide, claiming around 17 million lives per year. Our goals for this project will be to produce the best model(s) that identify and define both the protective and risk factors when it comes to predicting the prevalence of a CVD. Through the knowledge of these factors, we will be able to target the best primary prevention methods and help deter any possible development of some CVDs.
 
 **Questions:**
 
@@ -18,15 +18,13 @@ Cardiovascular diseases (CVDs) are the leading cause of death worldwide, claimin
 
 In this project we are going to be using the **OSEMN** Process:
 
-1. **Obtain**: Since we found our dataset on Kaggle, we just need to load it into the Jupyter Notebooks.
+1. **Obtain**: Our dataset was collected from Kaggle's website and then downloaded into a local file on our computer.
 
+2. **Inspecting & Scrubbing**: This is where we inspect clean the data. In this section, we will be looking for: outliers, null values, making sure the values within certain columns are reasonable, and viewing the types of values within each column (categorical vs numerical).
 
-(**Inspecting, Scrubbing, and Exploring** are all meshed together in this process)
-2. **Inspecting & Scrubbing**: This is where we inspect clean the data (where we absolutely have to). In this section, we will be looking for: outliers, null values, making sure the values within certain columns are reasonable, and viewing the types of values within each column.
+3. **Explore**: We look at our data and the relationship between the features and our target, and identifying any missed outliers before moving onto the modeling phase.
 
-3. **Explore**: Looking at our data and the relationship between the features and our target, and identifying any missed outliers.
-
-4. **Modeling**: We will then create multiple types of classification models to determine which factors play a significant role when classifying the likelihood of having a Cardiovascular Disease.
+4. **Modeling**: We then create multiple types of classification models to determine which factors play a significant role when classifying the likelihood of having a Cardiovascular Disease.
 
 5. **Interpretion**: Results and Conclusion of models.
 
@@ -69,7 +67,7 @@ warnings.filterwarnings("ignore")
 plt.style.use('ggplot')
 ```
 
-Our dataset needs a semicolon separator to load in correctly. Also, we will be using the 'id' column as our dataset's index.
+Our dataset needs a semicolon separator to load in correctly. We will be using the 'id' column as our dataset's index.
 
 
 ```python
